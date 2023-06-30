@@ -48,8 +48,12 @@ if "MBP14.local" in hostname:
     stab_path = "./test/fstab"
     base_dir = "./test/"
 
+if hostname not in gfs_hosts:
+    print("Hostname {} not found in gfs_hosts".format(hostname))
+    sys.exit(1)
+
 mount_points["gfs"]["remote_path"] = mount_points["gfs"]["remote_path"].format( get_gfs_primary(hostname, "PRIMARY"))
-mount_points["gfs"]["options"] =mount_points["gfs"]["options"].format(get_gfs_primary(hostname, "BACKUP"))
+mount_points["gfs"]["options"] = mount_points["gfs"]["options"].format(get_gfs_primary(hostname, "BACKUP"))
 
 mount_list = []
 for key, mount in mount_points.items():
