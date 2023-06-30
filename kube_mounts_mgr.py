@@ -14,12 +14,9 @@ mount_points = {
 
 gfs_mount = "{}:/kube-svr/ /store/gfs glusterfs defaults,_netdev,backupvolfile-server={},transport=tcp  0 0"
 gfs_hosts = {
-    "ks-01": {"PRIMARY":"kube-gfs-03", "BACKUP":"kube-gfs-02"},
-    "ks-02": {"PRIMARY":"kube-gfs-02", "BACKUP":"kube-gfs-01"},
-    "ks-03": {"PRIMARY":"kube-gfs-01", "BACKUP":"kube-gfs-03"},
-    "ks-04": {"PRIMARY":"kube-gfs-03", "BACKUP":"kube-gfs-02"},
-    "ks-05": {"PRIMARY":"kube-gfs-02", "BACKUP":"kube-gfs-01"},
-    "ks-06": {"PRIMARY":"kube-gfs-01", "BACKUP":"kube-gfs-03"}
+    "km-01": {"PRIMARY":"kube-gfs-03", "BACKUP":"kube-gfs-02"},
+    "km-02": {"PRIMARY":"kube-gfs-02", "BACKUP":"kube-gfs-01"},
+    "km-03": {"PRIMARY":"kube-gfs-01", "BACKUP":"kube-gfs-03"},
 }
 
 def get_gfs_primary(hostname, which):
