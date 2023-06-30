@@ -11,7 +11,7 @@ wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_setup.s
 ## DNS
 Add GFS entries to the hosts file 
 
-get https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_dns_update.py -O - | python3
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_dns_update.py -O - | python3
 
 ## Gluster Volumes
 Creation volumes on Gluster Cluster:

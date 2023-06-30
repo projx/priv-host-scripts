@@ -4,21 +4,11 @@ from pprint import pprint
 
 mount_points = {
     "cntrs-svr":
-        {"remote_path":"nas-01:/volume1/CNTRS-SVR/", "local_path":"/store/nas_data", "options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" },
-    "downloads":
-        {"remote_path":"nas-01:/volume2/Downloads/", "local_path":"/store/downloads", "options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
-    "tv":
-        {"remote_path":"nas-01:/volume2/TV/", "local_path":"/store/tv", "options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
-    "movies":
-        {"remote_path":"nas-01:/volume2/Movies/","local_path":"/store/movies","options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
-    "books":
-        {"remote_path":"nas-01:/volume2/Books/","local_path":"/store/books","options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
-    "youtube":
-        {"remote_path":"nas-01:/volume2/YouTube/","local_path":"/store/youtube","options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
-    "music":
-        {"remote_path":"as-01:/volume2/Music/", "local_path":"/store/music", "options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
+        {"remote_path":"nas-01:/volume1/CNTRS-MGR/", "local_path":"/store/nas", "options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" },
+    # "downloads":
+    #     {"remote_path":"nas-01:/volume2/Downloads/", "local_path":"/store/downloads", "options":"nfs nfsvers=4,rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0"},
     "gfs":
-        {"remote_path": "{}:/kube-svr/", "local_path": "/store/gfs", "options": "glusterfs defaults,_netdev,backupvolfile-server={},transport=tcp  0 0"}
+        {"remote_path": "{}:/kube-mgr/", "local_path": "/store/gfs", "options": "glusterfs defaults,_netdev,backupvolfile-server={},transport=tcp  0 0"}
 }
 
 
@@ -58,7 +48,6 @@ if "MBP14.local" in hostname:
     stab_path = "./test/fstab"
     base_dir = "./test/"
 
-
 mount_points["gfs"]["remote_path"] = mount_points["gfs"]["remote_path"].format( get_gfs_primary(hostname, "PRIMARY"))
 mount_points["gfs"]["options"] =mount_points["gfs"]["options"].format(get_gfs_primary(hostname, "BACKUP"))
 
@@ -73,3 +62,4 @@ for key, mount in mount_points.items():
 fh = open(stab_path, 'a')
 fh.write("\n".join(mount_list))
 fh.close()
+
