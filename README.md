@@ -23,3 +23,4 @@ wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/gfs_gluster_
 NFS and GFS shares to mount on K8s nodes
 
 wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_svr_mounts.py -O - | python3
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_mgr_mounts.py -O - | python3
