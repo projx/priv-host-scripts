@@ -24,3 +24,10 @@ NFS and GFS shares to mount on K8s nodes
 
 wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_mounts_svr.py -O - | python3
 wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_mounts_mgr.py -O - | python3
+
+# Install ZSH
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh_setup.sh -O - | sh
+
+
+# Add users
+useradd -m -d /home/k3_test k3_test

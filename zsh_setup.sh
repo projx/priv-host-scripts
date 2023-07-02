@@ -1,6 +1,5 @@
 #!/bin/bash
 
-apt install -y git-core curl fonts-powerline zsh
 chsh -s $(which zsh)
 
 ## Install Oh My Zsh and plugins
