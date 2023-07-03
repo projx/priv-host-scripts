@@ -26,6 +26,7 @@ wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_mounts_
 wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kube_mounts_mgr.py -O - | python3
 
 # Install ZSH
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh_install.sh -O - | sh
 wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh_setup.sh -O - | sh
 
 
