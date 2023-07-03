@@ -7,7 +7,6 @@ chsh -s $(which zsh)
 
 ## Install Oh My Zsh and plugins
 echo "Install ZSH: Oh My Zsh and plugins"
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
@@ -18,6 +17,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # sed -i 's/ZSH_THEME="[^"]*/ZSH_THEME="powerlevel10k\/powerlevel10k/g' .zshrc
 
 echo "ZSH Installation: Grabbing zshrc and p10k.zsh configuration files"
-wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh/zshrc_config -O ~/.zshrc
-wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh/p10k.zsh -O ~/.p10k.zsh
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh/zshrc_config -O $HOME/.zshrc
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh/p10k.zsh -O $HOME/.p10k.zsh
 
+#wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh/zshrc_config -O $HOME/zshrc123
+#wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh/p10k.zsh -O ~/.p10k.zsh
