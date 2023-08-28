@@ -4,8 +4,9 @@ import fcntl
 import struct
 import subprocess
 
+HOSTS_FILE = "/etc/hosts"
 
-hosts = {
+HOSTS_LIST = {
     ## Base hosts
     "127.0.0.1" : "localhost",
     "10.10.110.22" : "nas-01",
@@ -79,19 +80,18 @@ def generate_host_list(dns_list, host_ip):
     return output
 
 def main():
-    host_file = "./test_hosts"
 
     print("Looking up host primary IP address...")
     ip = get_primary_ip()
-    if ip in hosts:
-        print("Found hostname: {} matches {}".format(ip, hosts[ip]))
-        set_hostname(hosts[ip])
-        hl = generate_host_list(hosts, ip)
+    if ip in HOSTS_LIST:
+        print("Found hostname: {} matches {}".format(ip, HOSTS_LIST[ip]))
+        set_hostname(HOSTS_LIST[ip])
+        hl = generate_host_list(HOSTS_LIST, ip)
     
         addr_str = "\n".join(hl)
-        print("Dumping to file: \n" + host_file)
+        print("Dumping to file: \n" + HOSTS_FILE)
         
-        fh = open(host_file, 'a')
+        fh = open(HOSTS_FILE, 'a')
         fh.write("\n\n"+addr_str)
         fh.close()
     else:
