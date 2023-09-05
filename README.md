@@ -32,3 +32,8 @@ wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/zsh_setup.sh
 
 # Add users
 useradd -m -d /home/k3_test k3_test
+
+## Kill Systemd-resolved
+Creation volumes on Gluster Cluster:
+
+wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kill-systemd-resolv.sh -O - | sh
