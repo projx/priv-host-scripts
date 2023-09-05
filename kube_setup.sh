@@ -2,7 +2,7 @@
 
 add-apt-repository -y ppa:gluster/glusterfs-11
 apt update
-apt install -y glusterfs-server nfs-common inetutils-traceroute net-tools lynx open-vm-tools git python3 duperemove
+apt install -y glusterfs-server nfs-common inetutils-traceroute net-tools lynx open-vm-tools git python3 duperemove sqlite3
 sleep 5
 
 ######################################
