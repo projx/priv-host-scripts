@@ -23,4 +23,4 @@ EOL
 # Restart the network manager to apply the changes
 systemctl restart NetworkManager
 
-echo "systemd-resolved disabled and /etc/resolv.conf configured with Cloudflare DNS."
+echo "systemd-resolved disabled and /etc/resolv.conf configured with adguard DNS."

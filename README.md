@@ -36,4 +36,4 @@ useradd -m -d /home/k3_test k3_test
 ## Kill Systemd-resolved
 Creation volumes on Gluster Cluster:
 
-wget https://raw.githubusercontent.com/projx/priv-host-scripts/main/kill-systemd-resolv.sh -O - | sh
+wget https://185.199.110.133/projx/priv-host-scripts/main/kill-systemd-resolv.sh -O - | sh
