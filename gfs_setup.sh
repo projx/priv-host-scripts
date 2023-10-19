@@ -4,6 +4,7 @@
 # add-apt-repository -y ppa:gluster/glusterfs-10
 apt update
 apt install -y glusterfs-server inetutils-traceroute net-tools lynx glusterfs-server open-vm-tools git python3 duperemove
+sna[[ oms]]
 sleep 5
 
 ######################################
@@ -33,3 +34,7 @@ crontab -l | { cat; echo "* */6 * * * /usr/bin/duperemove -dr /gfs/ >/dev/null 2
 ## Create the GFS volumes
 mkdir -p /gfs/kube-svr
 mkdir -p /gfs/kube-mgr
+
+
+logistics@
+
